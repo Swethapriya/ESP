@@ -83,7 +83,6 @@ class start(object):
 
 
     def Move(self,pop = True):
-        LOGGER.info('should move in direction: ' + self.direction)
         if(self.direction == 'r'):
             if(self.SNAKE[0][0]+2*self.RADIUS > self.SIZE[0]):
                 LOGGER.info('GameOver')
@@ -92,7 +91,7 @@ class start(object):
             pygame.draw.circle(self.SCREEN, WHITE, self.SNAKE[0], self.RADIUS, 5)
             pygame.draw.circle(self.SCREEN, BLACK, self.SNAKE[-1], self.RADIUS, 5)
         elif(self.direction == 'l'):
-            if(self.SNAKE[0][0]+2*self.RADIUS < 0):
+            if(self.SNAKE[0][0]-2*self.RADIUS < 0):
                 LOGGER.info('GameOver')
                 self.Quit()
             self.SNAKE = [[self.SNAKE[0][0]-2*self.RADIUS,self.SNAKE[0][1]]] + self.SNAKE
