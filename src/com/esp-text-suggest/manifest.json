@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+
+  "name": "Modify CSS and HTML",
+  "version": "0.1.0",
+  "description": "Lateral blog post demo extension",
+
+  "content_scripts": [{
+    "js": ["jquery-3.3.1.min.js","content.js"],
+    "matches": ["<all_urls>"]
+  }],
+
+  "background": { "scripts": ["jquery-3.3.1.min.js", "content.js"]},
+
+   "permissions": [
+    "contextMenus",
+    "<all_urls>"
+  ]
+}
